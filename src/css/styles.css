@@ -1,0 +1,45 @@
+/* --- Housekeeping --- */
+body {margin: 0;}
+a {text-decoration: none; color: inherit;}
+body {font-family: 'Lato', sans-serif;}
+
+/* --- Main Menu --- */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px;
+}
+
+nav a {
+    
+}
+
+/* --- Spacing --- */
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* --- index.php --- */
+.categories {
+    display: flex;
+    flex-direction: column;
+}
+
+.categories a {
+    margin: 5px 0;
+}
+
+.listings-container {display: flex;}
+
+.listing { 
+    width: 250px; 
+    margin: 0px 20px; 
+    padding: 20px; 
+    box-shadow: 0px 12px 18px -6px rgb(0 0 0 / 30%);
+}
+
+.description {
+    padding: 10px 0;
+}
