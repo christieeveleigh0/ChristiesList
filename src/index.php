@@ -43,20 +43,30 @@
             <div class="hot-items">
                     
                     <?php
-                        $hot_listings = getAllListings();
-                        if ($hot_listings->num_rows > 0) {
-                            while($row = $hot_listings->fetch_assoc()) {
-                                listing($row['id'], $row['name'], $row['price'], $row['location']);
-                            }
-                        } else {
-                        echo '<div>
-                                <h3>There are currently no listings. Why dont you <a href="create-listing.php">create one?</a></h3>
-                            </div>';
-                        }
+                        // $hot_listings = getAllListings();
+                        // if ($hot_listings->num_rows > 0) {
+                        //     while($row = $hot_listings->fetch_assoc()) {
+                        //         listing($row['id'], $row['name'], $row['price'], $row['location']);
+                        //     }
+                        // } else {
+                        // echo '<div>
+                        //         <h3>There are currently no listings. Why dont you <a href="create-listing.php">create one?</a></h3>
+                        //     </div>';
+                        // }
                     ?>
             </div>
-            <div>
-                <h1>Categories</h1>
+            <h1>Categories</h1>
+            <div class="category">
+                <div class="categories">
+                    <div class="category-1"><h3>Antiques</h3></div>
+                    <div class="category-2"><h3>Collectables</h3></div>
+                    <div class="category-3"><h3>Furniture</h3></div>
+                </div>
+                <div class="categories">
+                   <div class="category-4"><h3>Hobbies</h3></div>
+                   <div class="category-5"><h3>Home Appliances</h3></div>
+                   <div class="category-6"><h3>Home Decor</h3></div>
+                </div>
             </div>
         </div>
     </body>
