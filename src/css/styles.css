@@ -1,7 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;600;700&display=swap');
+
 /* --- Housekeeping --- */
-body {margin: 0;}
+body, h1, h3, p {margin: 0;}
 a {text-decoration: none; color: inherit;}
-body {font-family: 'Lato', sans-serif;}
+body {font-family: 'Inter', sans-serif;}
+p {line-height: 1.8em; font-size: 17px; font-weight: 300; color: #727272;}
+h1 {font-size: 40px;}
+h1, h2, h3 {font-weight: 500; color: #0d0c22;}
+h2 {text-transform: uppercase; font-size: 13px;}
+h2 {margin: 2px;}
+
+button {
+    border-radius: 17px;
+    border: 0;
+    padding: 10px 40px;
+    font-size: 13px;
+    text-transform: uppercase;
+    background-color: white;
+}
 
 /* --- Main Menu --- */
 nav {
@@ -12,34 +28,114 @@ nav {
 }
 
 nav a {
-    
+    text-transform: uppercase;
+    font-size: 13px;
+    margin: 0 10px;
 }
 
 /* --- Spacing --- */
 .container {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* --- index.php --- */
-.categories {
+.heading {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    padding: 100px 0 50px 0;
+}
+
+.heading-description {
+    padding-right: 30px;
+    width: 65%;
 }
 
 .categories a {
     margin: 5px 0;
 }
 
-.listings-container {display: flex;}
+/* Listings items */
 
+.listings-container {
+    display: flex;
+    justify-content: center;
+}
+
+.listings-container-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+}
+
+.listing {margin: 0px 20px; padding: 20px; box-shadow: 0px 12px 18px -6px rgb(0 0 0 / 30%);}
+    
 .listing { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 250px; 
-    margin: 0px 20px; 
-    padding: 20px; 
-    box-shadow: 0px 12px 18px -6px rgb(0 0 0 / 30%);
 }
 
 .description {
+    width: 249px;
+}
+
+.description, .full-description {
     padding: 10px 0;
+}
+
+.full-description-price {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+}
+
+.location img {
+    margin-right: 5px;
+}
+
+.safety-banner {
+    width: 70%;
+    margin: 70px 0;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #eae4df;
+    background-image: url("image/safety.png");
+}
+
+.hot-items {
+    display: flex;
+    margin-bottom: 70px;
+}
+
+/* ---  view-listing.php --- */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    margin: 7px 0;
+}
+
+.side-by-side {
+    display: flex;
+    padding: 100px 0 50px 0;
+}
+
+.listing-side {
+    padding-right: 150px;
 }
