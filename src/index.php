@@ -39,7 +39,7 @@
                     </div>
                     <button>Learn More</button>
             </div>
-            <h1>Hot Items</h1>
+            <h1>Hot Items <img src="image/hot.png" width="25px"></h1>
             <div class="hot-items">
                     
                     <?php
@@ -55,20 +55,21 @@
                         // }
                     ?>
             </div>
-            <h1>Categories</h1>
+            <h1>Categories <img src="image/categories.png" width="30px"></h1>
             <div class="category">
                 <div class="categories">
-                    <div class="category-1"><h3>Antiques</h3></div>
-                    <div class="category-2"><h3>Collectables</h3></div>
-                    <div class="category-3"><h3>Furniture</h3></div>
+                    <a href="category.php?type=antiques"><div class="category-1"><h3>Antiques</h3></div></a>
+                    <a href="category.php?type=furniture"><div class="category-3"><h3>Furniture</h3></div></a>
+                    <a href="category.php?type=collectables"><div class="category-2"><h3>Collectables</h3></div></a>
+                    
                 </div>
                 <div class="categories">
-                   <div class="category-4"><h3>Hobbies</h3></div>
-                   <div class="category-5"><h3>Home Appliances</h3></div>
-                   <div class="category-6"><h3>Home Decor</h3></div>
+                    <a href="category.php?type=hobbies"><div class="category-4"><h3>Hobbies</h3></div></a>
+                    <a href="category.php?type=appliances"><div class="category-5"><h3>Home Appliances</h3></div></a>
+                    <a href="category.php?type=decor"><div class="category-6"><h3>Home Decor</h3></div></a>
                 </div>
             </div>
         </div>
     </body>
-    
+    <?php include 'footer.php';?>
 </html>

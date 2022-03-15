@@ -1,13 +1,13 @@
 
 /* --- Housekeeping --- */
-body, h1, h3, p {margin: 0;}
+body, h1, h3, p, h4 {margin: 0;}
 a {text-decoration: none; color: inherit;}
 body {font-family: 'Inter', sans-serif;}
 p {line-height: 1.8em; font-size: 17px; font-weight: 300; color: #727272;}
 h1 {font-size: 40px;}
-h1, h2, h3 {font-weight: 500; color: #0d0c22;}
-h2 {text-transform: uppercase; font-size: 13px;}
-h2 {margin: 2px;}
+h1, h2, h3, h4 {font-weight: 500; color: #0d0c22;}
+h2 {text-transform: uppercase; font-size: 13px; margin: 2px;}
+h4 {font-size: 25px;}
 
 button {
     border-radius: 17px;
@@ -18,15 +18,15 @@ button {
     background-color: white;
 }
 
-/* --- Main Menu --- */
-nav {
+/* --- Main Menus --- */
+nav, footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 25px;
 }
 
-nav a {
+nav a, footer a {
     text-transform: uppercase;
     font-size: 13px;
     margin: 0 10px;
@@ -47,9 +47,12 @@ nav a {
     padding: 100px 0 50px 0;
 }
 
+.heading h1 {
+    margin-right: 30px;
+}
+
 .heading-description {
-    padding-right: 30px;
-    width: 65%;
+    width: 60%;
 }
 
 .categories a {
@@ -133,19 +136,23 @@ nav a {
     text-align: center;
 }
 
-.category-1 {background: #bdffb7 url("../image/antiques.png") no-repeat center 33%; background-position-x: 94%;}
-.category-2 {background-color: #deea75;}
-.category-3 {background: #deea75 url("../image/couch.png") no-repeat center 31%; background-position-x: 104%; background-size: 43%;}
-.category-4 {background: #ddeede url("../image/hobbies.png") no-repeat center 31%; background-position-x: 104%; background-size: 53%;}
-.category-5 {background-color: #f4b744;}
-.category-6 {background-color: #e7e6f4;}
+.category-1 {background: #bdffb7 url("../image/antiques.png") no-repeat center 33%;}
+.category-2 {background: #ddede0 url("../image/collectibles.png") no-repeat center 31%;}
+.category-3 {background: #deea75 url("../image/couch.png") no-repeat center 31%;}
+.category-4 {background: #ddeede url("../image/hobbies.png") no-repeat center 31%;}
+.category-5 {background: #f4b744 url("../image/appliances.png") no-repeat center 31%;}
+.category-6 {background: #e7e6f4 url("../image/decor.png") no-repeat center 31%;}
 
+.category-1, .category-2, .category-3, .category-4, .category-5, .category-6  {
+    background-position-x: 104%;
+    background-size: 43%;
+}
 
 /* ---  view-listing.php --- */
-form {
+/* form {
     display: flex;
     flex-direction: column;
-}
+} */
 
 input, select {
     width: 100%;
@@ -167,3 +174,10 @@ input, select {
     margin-top: 100px;
     width: 60%;
 }
+
+/* ---  login.php --- */
+.register {text-decoration: underline;}
+.form-container {width: 50%;}
+#password {margin-top: -25px;} 
+
+.fa-eye, .fa-eye-slash { width: fit-content; z-index: 50; float: right; position: relative; margin-top: 25px; margin-right: 13px; color: #949494; }
