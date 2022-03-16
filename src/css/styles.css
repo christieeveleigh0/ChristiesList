@@ -43,13 +43,17 @@ button, input[type="submit"] {
     background-color: white;
 }
 
-nav, footer, .container, .heading, .listings-container, .listings-container-inner, 
+nav, nav div, footer, .container, .heading, .listings-container, .listings-container-inner, 
 .listing, .full-description-price, .location, .safety-banner, .hot-items, 
 .categories, .side-by-side  {display: flex;}
 
+nav, footer, nav div, .container, .heading, .listings-container-inner, .listing, .location, .safety-banner {align-items: center;}
+
+.category, .safety-banner, .listings-container, .listings-container-inner, .heading { width: 100%; }
+.container { width: 70%;   margin: 0 auto;}
+
 /* --- Main Menus --- */
 nav, footer {
-    align-items: center;
     justify-content: space-between;
     padding: 25px;
 }
@@ -60,16 +64,40 @@ nav a, footer a {
     margin: 0 10px;
 }
 
+nav div {
+    margin-left: 10px;
+}
+
+.teams-dropdown {
+    display: none; 
+    position: absolute; 
+    right: 208px; 
+    margin-top: 189px; 
+    background-color: white; 
+    min-width: 160px; 
+    overflow: auto; 
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); 
+    z-index: 100; 
+}
+
+.show {
+    display: grid;
+    padding: 30px 12px 20px 12px;
+    box-shadow: 0px 12px 18px -6px rgb(0 0 0 / 30%);
+}
+
+.options-button {
+    margin: 5px;
+}
+
 /* --- Spacing --- */
 .container {
     flex-direction: column;
-    align-items: center;
 }
 
 /* --- index.php --- */
 .heading {
-    align-items: center;
-    width: 70%;
+    /* width: 70%; */
     padding: 100px 0 50px 0;
 }
 
@@ -92,14 +120,12 @@ nav a, footer a {
 }
 
 .listings-container-inner {
-    align-items: center;
     justify-content: center;
-    width: 70%;
+    /* width: 70%; */
 }
 
 .listing { 
     flex-direction: column;
-    align-items: center;
     width: 250px;
     margin: 0px 20px;
     padding: 20px;
@@ -119,22 +145,18 @@ nav a, footer a {
     padding: 20px 0;
 }
 
-.location {
-    align-items: center;
-}
-
 .location img {
     margin-right: 5px;
 }
 
 .safety-banner {
-    width: 70%;
+    /* width: 70%; */
     margin: 70px 0;
-    padding: 40px;
-    align-items: center;
+    padding: 70px;
     justify-content: space-between;
-    background-color: #eae4df;
-    background-image: url("image/safety.png");
+    background: #eae4df url("../image/safety.png") no-repeat center;
+    background-size: 75%;
+    background-position-x: 111%;
 }
 
 .hot-items {
@@ -144,6 +166,8 @@ nav a, footer a {
 .category {
     margin-bottom: 100px;
 }
+
+.categories {justify-content: center;}
 
 .categories div {
     width: 300px;

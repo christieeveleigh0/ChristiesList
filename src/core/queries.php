@@ -29,8 +29,15 @@ function getListingById($id) {
     return $conn->query("SELECT * FROM listing WHERE id=" . $id);
 }
 
+/* Select all listings by category */
+function getListingsByCategory($category) {
+    require 'conn.php';
+    return $conn->query("SELECT * FROM listing WHERE category='" . $category . "'");
+}
+
 /* Select user details by their email. The password is an MD5 Hash for security reasons */
 function getHash($email) {
     require 'conn.php';
     return $conn->query("SELECT id, password FROM users WHERE email='" . $email . "'");
 }
+

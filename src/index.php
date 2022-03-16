@@ -61,7 +61,6 @@
                     <a href="category.php?type=antiques"><div class="category-1"><h3>Antiques</h3></div></a>
                     <a href="category.php?type=furniture"><div class="category-3"><h3>Furniture</h3></div></a>
                     <a href="category.php?type=collectables"><div class="category-2"><h3>Collectables</h3></div></a>
-                    
                 </div>
                 <div class="categories">
                     <a href="category.php?type=hobbies"><div class="category-4"><h3>Hobbies</h3></div></a>
