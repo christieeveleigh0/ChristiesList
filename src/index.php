@@ -1,4 +1,4 @@
-<?php include 'menu.php'; include 'core/queries.php'; include 'model/listing.php';?>
+<?php session_start(); include 'menu.php'; include 'core/queries.php'; include 'model/listing.php';?>
 <html>
     <body>
         <div class="container">

@@ -1,15 +1,40 @@
 
 /* --- Housekeeping --- */
-body, h1, h3, p, h4 {margin: 0;}
-a {text-decoration: none; color: inherit;}
-body {font-family: 'Inter', sans-serif;}
-p {line-height: 1.8em; font-size: 17px; font-weight: 300; color: #727272;}
-h1 {font-size: 40px;}
+body, h1, h3, p, h4 {
+    margin: 0;
+}
+
+a {
+    text-decoration: none; 
+    color: inherit;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+
+p {
+    font-size: 17px;
+}
+
+.registration p {
+    font-size: 14px;
+}
+
+p, .registration p {
+    line-height: 1.8em; 
+    font-weight: 300; 
+    color: #727272;
+}
+
+
 h1, h2, h3, h4 {font-weight: 500; color: #0d0c22;}
+h1 {font-size: 40px;}
 h2 {text-transform: uppercase; font-size: 13px; margin: 2px;}
 h4 {font-size: 25px;}
 
-button {
+button, input[type="submit"] {
     border-radius: 17px;
     border: 0;
     padding: 10px 40px;
@@ -18,9 +43,12 @@ button {
     background-color: white;
 }
 
+nav, footer, .container, .heading, .listings-container, .listings-container-inner, 
+.listing, .full-description-price, .location, .safety-banner, .hot-items, 
+.categories, .side-by-side  {display: flex;}
+
 /* --- Main Menus --- */
 nav, footer {
-    display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 25px;
@@ -34,14 +62,12 @@ nav a, footer a {
 
 /* --- Spacing --- */
 .container {
-    display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 /* --- index.php --- */
 .heading {
-    display: flex;
     align-items: center;
     width: 70%;
     padding: 100px 0 50px 0;
@@ -62,24 +88,22 @@ nav a, footer a {
 /* Listings items */
 
 .listings-container {
-    display: flex;
     justify-content: center;
 }
 
 .listings-container-inner {
-    display: flex;
     align-items: center;
     justify-content: center;
     width: 70%;
 }
 
-.listing {margin: 0px 20px; padding: 20px; box-shadow: 0px 12px 18px -6px rgb(0 0 0 / 30%);}
-    
 .listing { 
-    display: flex;
     flex-direction: column;
     align-items: center;
-    width: 250px; 
+    width: 250px;
+    margin: 0px 20px;
+    padding: 20px;
+    box-shadow: 0px 12px 18px -6px rgb(0 0 0 / 30%);
 }
 
 .description {
@@ -91,13 +115,11 @@ nav a, footer a {
 }
 
 .full-description-price {
-    display: flex;
     justify-content: space-between;
     padding: 20px 0;
 }
 
 .location {
-    display: flex;
     align-items: center;
 }
 
@@ -109,7 +131,6 @@ nav a, footer a {
     width: 70%;
     margin: 70px 0;
     padding: 40px;
-    display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #eae4df;
@@ -117,16 +138,11 @@ nav a, footer a {
 }
 
 .hot-items {
-    display: flex;
     margin-bottom: 70px;
 }
 
 .category {
     margin-bottom: 100px;
-}
-
-.categories {
-    display: flex;
 }
 
 .categories div {
@@ -149,19 +165,7 @@ nav a, footer a {
 }
 
 /* ---  view-listing.php --- */
-/* form {
-    display: flex;
-    flex-direction: column;
-} */
-
-input, select {
-    width: 100%;
-    padding: 14px;
-    margin: 7px 0;
-}
-
 .side-by-side {
-    display: flex;
     padding: 100px 0 50px 0;
 }
 
@@ -176,8 +180,71 @@ input, select {
 }
 
 /* ---  login.php --- */
-.register {text-decoration: underline;}
-.form-container {width: 50%;}
-#password {margin-top: -25px;} 
+.login-heading {
+    margin: 100px 0 20px 0; 
+    text-align: center;
+}
 
-.fa-eye, .fa-eye-slash { width: fit-content; z-index: 50; float: right; position: relative; margin-top: 25px; margin-right: 13px; color: #949494; }
+.underline {
+    text-decoration: underline;
+}
+
+.form-container {
+    width: 50%;
+}
+
+#password {
+    margin-top: -30px;
+} 
+
+.fa-eye, .fa-eye-slash { 
+    width: fit-content; 
+    z-index: 50; 
+    float: right; 
+    position: relative; 
+    margin-top: 27px; 
+    margin-right: 13px; 
+    color: #949494;
+}
+
+.registration {
+    margin-top: 100px; 
+    text-align: center; 
+    font-size: 14px;
+}
+
+.registration a {
+    text-decoration: underline;
+}
+
+.display-form-error p {
+    background-color: #ffdfe2; 
+    color: #fa4941; padding: 
+    10px; font-size: 14px; 
+}
+
+.display-form-error a {
+    color: #fa4941; 
+    text-decoration: underline;
+}
+
+.display-form-success p {
+    background-color: #dffdf5; 
+    color: #3dcfa0; 
+    padding: 10px; 
+    font-size: 14px;
+}
+
+/* ---  Forms  --- */
+input, select {
+    width: 100%;
+    padding: 14px;
+    margin: 7px 0;
+}
+
+input[type="submit"] {
+    background: #deea75 !important;
+    color: black !important;
+    width: 23%;
+    float: right;
+}

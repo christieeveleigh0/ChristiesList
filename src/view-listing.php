@@ -1,4 +1,4 @@
-<?php include 'menu.php'; include 'core/queries.php'; include 'model/full-listing.php'; ?>
+<?php session_start(); include 'menu.php'; include 'core/queries.php'; include 'model/full-listing.php'; ?>
 
 <html>
     <!-- Display an individual listing by calling the method in queries.php that displays
