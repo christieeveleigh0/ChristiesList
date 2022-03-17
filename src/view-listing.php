@@ -10,7 +10,7 @@
                     $listings = getListingById($_GET['id']); 
                     if ($listings->num_rows > 0) {
                         while($row = $listings->fetch_assoc()) {
-                            fullListing($row['id'], $row['name'], $row['description'], $row['tags'], $row['price'], $row['date'], $row['location'], $row['image']);
+                            fullListing($row['id'], $row['name'], $row['description'], $row['price'], $row['date'], $row['location'], $row['image']);
                     }
                     } else {
                     echo '<div>

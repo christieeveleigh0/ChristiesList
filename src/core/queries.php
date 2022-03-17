@@ -35,6 +35,12 @@ function getListingsByCategory($category) {
     return $conn->query("SELECT * FROM listing WHERE category='" . $category . "'");
 }
 
+/* Select the last 8 results to display in the Hot section on the Home page. The first 4 listings are dummies and will always be there. */
+function getHotListings() {
+    require 'conn.php';
+    return $conn->query("SELECT * FROM listing WHERE id > 5");
+}
+
 /* Select user details by their email. The password is an MD5 Hash for security reasons */
 function getHash($email) {
     require 'conn.php';

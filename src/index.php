@@ -39,21 +39,40 @@
                     </div>
                     <button>Learn More</button>
             </div>
+
+            <!-- Display items in a nice, neat table with 4 rows. Iterating over sql results as they are being displayed as 
+                 a Listing model. Display 8 listings only and move them over the the next row after 4 have been displayed -->
             <h1>Hot Items <img src="image/hot.png" width="25px"></h1>
             <div class="hot-items">
-                    
-                    <?php
-                        // $hot_listings = getAllListings();
-                        // if ($hot_listings->num_rows > 0) {
-                        //     while($row = $hot_listings->fetch_assoc()) {
-                        //         listing($row['id'], $row['name'], $row['price'], $row['location']);
-                        //     }
-                        // } else {
-                        // echo '<div>
-                        //         <h3>There are currently no listings. Why dont you <a href="create-listing.php">create one?</a></h3>
-                        //     </div>';
-                        // }
+                <table>
+                    <?php 
+
+                        $i = 0;
+                        $u = 0;
+                        $hot_listings = getHotListings();
+                            while ($row = $hot_listings->fetch_assoc()) { // Start While
+                                $i++;
+                                $u++;
+                                
                     ?>
+
+                    <td>
+                    <?php
+                        listing($row['id'], $row['name'], $row['price'], $row['location'], $row['image']);
+
+                        if ($u > 7) {
+                            break;
+                        }
+                        
+                        if ($i > 3) {
+                            echo "</tr><tr>";
+                            $i = 0;
+                        }
+                    ?>
+                    </td>
+                    <?php } // End While ?>
+
+                </table>
             </div>
             <h1>Categories <img src="image/categories.png" width="30px"></h1>
             <div class="category">
