@@ -1,22 +1,274 @@
-/* --- Housekeeping --- */
-body {margin: 0;}
-body {font-family: 'Lato', sans-serif;}
 
+/* --- Housekeeping --- */
+body, h1, h3, p, h4 {
+    margin: 0;
+}
+
+a {
+    text-decoration: none; 
+    color: inherit;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+
+p {
+    font-size: 17px;
+}
+
+.registration p {
+    font-size: 14px;
+}
+
+p, .registration p {
+    line-height: 1.8em; 
+    font-weight: 300; 
+    color: #727272;
+}
+
+
+h1, h2, h3, h4 {font-weight: 500; color: #0d0c22;}
+h1 {font-size: 40px;}
+h2 {text-transform: uppercase; font-size: 13px; margin: 2px;}
+h4 {font-size: 25px;}
+
+button, input[type="submit"] {
+    border-radius: 17px;
+    border: 0;
+    padding: 10px 40px;
+    font-size: 13px;
+    text-transform: uppercase;
+    background-color: white;
+}
+
+nav, nav div, footer, .container, .heading, .listings-container, .listings-container-inner, 
+.listing, .full-description-price, .location, .safety-banner, .hot-items, 
+.categories, .side-by-side  {display: flex;}
+
+nav, footer, nav div, .container, .heading, .listings-container-inner, .listing, .location, .safety-banner {align-items: center;}
+
+.category, .safety-banner, .listings-container, .listings-container-inner, .heading { width: 100%; }
+.container { width: 70%;   margin: 0 auto;}
+
+/* --- Main Menus --- */
+nav, footer {
+    justify-content: space-between;
+    padding: 25px;
+}
+
+nav a, footer a {
+    text-transform: uppercase;
+    font-size: 13px;
+    margin: 0 10px;
+}
+
+nav div {
+    margin-left: 10px;
+}
+
+.teams-dropdown {
+    display: none; 
+    position: absolute; 
+    right: 208px; 
+    margin-top: 189px; 
+    background-color: white; 
+    min-width: 160px; 
+    overflow: auto; 
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); 
+    z-index: 100; 
+}
+
+.show {
+    display: grid;
+    padding: 30px 12px 20px 12px;
+    box-shadow: 0px 12px 18px -6px rgb(0 0 0 / 30%);
+}
+
+.options-button {
+    margin: 5px;
+}
 
 /* --- Spacing --- */
 .container {
-    display: flex;
-    justify-content: space-around;
+    flex-direction: column;
 }
 
-.categories {
-    display: flex;
-    flex-direction: column;
+/* --- index.php --- */
+.heading {
+    /* width: 70%; */
+    padding: 100px 0 50px 0;
+}
+
+.heading h1 {
+    margin-right: 30px;
+}
+
+.heading-description {
+    width: 60%;
 }
 
 .categories a {
     margin: 5px 0;
 }
 
-.listing {padding: 20px; box-shadow: 0px 12px 18px -6px rgb(0 0 0 / 30%);}
-.description {padding: 10px 0;}
+/* Listings items */
+
+.listings-container {
+    justify-content: center;
+}
+
+.listings-container-inner {
+    justify-content: center;
+    /* width: 70%; */
+}
+
+.listing { 
+    flex-direction: column;
+    width: 250px;
+    margin: 0px 20px;
+    padding: 20px;
+    box-shadow: 0px 12px 18px -6px rgb(0 0 0 / 30%);
+}
+
+.description {
+    width: 249px;
+}
+
+.description, .full-description {
+    padding: 10px 0;
+}
+
+.full-description-price {
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.location img {
+    margin-right: 5px;
+}
+
+.safety-banner {
+    /* width: 70%; */
+    margin: 70px 0;
+    padding: 70px;
+    justify-content: space-between;
+    background: #eae4df url("../image/safety.png") no-repeat center;
+    background-size: 75%;
+    background-position-x: 111%;
+}
+
+.hot-items {
+    margin-bottom: 70px;
+}
+
+.category {
+    margin-bottom: 100px;
+}
+
+.categories {justify-content: center;}
+
+.categories div {
+    width: 300px;
+    padding: 60px;
+    margin: 10px;
+    text-align: center;
+}
+
+.category-1 {background: #bdffb7 url("../image/antiques.png") no-repeat center 33%;}
+.category-2 {background: #ddede0 url("../image/collectibles.png") no-repeat center 31%;}
+.category-3 {background: #deea75 url("../image/couch.png") no-repeat center 31%;}
+.category-4 {background: #ddeede url("../image/hobbies.png") no-repeat center 31%;}
+.category-5 {background: #f4b744 url("../image/appliances.png") no-repeat center 31%;}
+.category-6 {background: #e7e6f4 url("../image/decor.png") no-repeat center 31%;}
+
+.category-1, .category-2, .category-3, .category-4, .category-5, .category-6  {
+    background-position-x: 104%;
+    background-size: 43%;
+}
+
+/* ---  view-listing.php --- */
+.side-by-side {
+    padding: 100px 0 50px 0;
+}
+
+.listing-side {
+    padding-right: 100px;
+}
+
+/* ---  create-listing.php --- */
+.inner {
+    margin-top: 100px;
+    width: 60%;
+}
+
+/* ---  login.php --- */
+.login-heading {
+    margin: 100px 0 20px 0; 
+    text-align: center;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.form-container {
+    width: 50%;
+}
+
+#password {
+    margin-top: -30px;
+} 
+
+.fa-eye, .fa-eye-slash { 
+    width: fit-content; 
+    z-index: 50; 
+    float: right; 
+    position: relative; 
+    margin-top: 27px; 
+    margin-right: 13px; 
+    color: #949494;
+}
+
+.registration {
+    margin-top: 100px; 
+    text-align: center; 
+    font-size: 14px;
+}
+
+.registration a {
+    text-decoration: underline;
+}
+
+.display-form-error p {
+    background-color: #ffdfe2; 
+    color: #fa4941; padding: 
+    10px; font-size: 14px; 
+}
+
+.display-form-error a {
+    color: #fa4941; 
+    text-decoration: underline;
+}
+
+.display-form-success p {
+    background-color: #dffdf5; 
+    color: #3dcfa0; 
+    padding: 10px; 
+    font-size: 14px;
+}
+
+/* ---  Forms  --- */
+input, select {
+    width: 100%;
+    padding: 14px;
+    margin: 7px 0;
+}
+
+input[type="submit"] {
+    background: #deea75 !important;
+    color: black !important;
+    width: 23%;
+    float: right;
+}
