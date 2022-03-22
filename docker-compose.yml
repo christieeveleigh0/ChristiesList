@@ -19,6 +19,7 @@ services:
       MYSQL_ROOT_PASSWORD: example
     volumes:
       - mysql-data:/var/lib/mysql
+      - uploads.ini
 
   adminer:
     image: adminer

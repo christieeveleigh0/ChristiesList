@@ -52,8 +52,27 @@ function registerUser($name, $number, $email, $password) {
     require 'conn.php';
     $query = "INSERT INTO users (name, number, email, password) VALUES (?, ?, ?, ?)";
 
-    if($stmt = mysqli_prepare($conn, $query)) {
+    if ($stmt = mysqli_prepare($conn, $query)) {
         mysqli_stmt_bind_param($stmt, "ssss", $name, $number, $email, $password);
+        mysqli_stmt_execute($stmt);
+        return true;
+    } else {
+        echo mysqli_error($link);
+        return false;
+    }
+
+    mysqli_stmt_close($stmt); // Close connections
+    mysqli_close($conn);
+}
+
+/* Submit a listing. Perform a prepared statement for security reasons. 
+   On success, return true. */
+function submitListing($title, $price, $location, $category, $description, $filepath) {
+    require 'conn.php';
+    $query = "INSERT INTO listing (name, description, location, date, category, image, price) VALUES (?, ?, ?, ?, ?, ?, ?)";
+   
+    if ($stmt = mysqli_prepare($conn, $query)) {
+        mysqli_stmt_bind_param($stmt, "sssssss", $title, $description, $location, date("Y/m/d"), $category, $filepath, $price);
         mysqli_stmt_execute($stmt);
         return true;
     } else {
