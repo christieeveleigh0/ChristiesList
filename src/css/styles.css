@@ -9,7 +9,7 @@ a {
     color: inherit;
 }
 
-body {
+body, textarea {
     font-family: 'Inter', sans-serif;
 }
 
@@ -37,7 +37,7 @@ h4 {font-size: 25px;}
 button, input[type="submit"] {
     border-radius: 17px;
     border: 0;
-    padding: 10px 40px;
+    padding: 14px 40px;
     font-size: 13px;
     text-transform: uppercase;
     background-color: white;
@@ -49,7 +49,7 @@ nav, nav div, footer, .container, .heading, .listings-container, .listings-conta
 
 nav, footer, nav div, .container, .heading, .listings-container-inner, .listing, .location, .safety-banner {align-items: center;}
 
-.category, .safety-banner, .listings-container, .listings-container-inner, .heading { width: 100%; }
+.category, .listings-container, .listings-container-inner, .heading { width: 100%; }
 .container { width: 70%;   margin: 0 auto;}
 
 /* --- Main Menus --- */
@@ -150,7 +150,7 @@ nav div {
 }
 
 .safety-banner {
-    /* width: 70%; */
+    width: -webkit-fill-available;
     margin: 70px 0;
     padding: 70px;
     justify-content: space-between;
@@ -194,12 +194,12 @@ nav div {
 }
 
 .listing-side {
+    max-width: 600px;
     padding-right: 100px;
 }
 
 /* ---  create-listing.php --- */
 .inner {
-    margin-top: 100px;
     width: 60%;
 }
 
@@ -209,16 +209,21 @@ nav div {
     text-align: center;
 }
 
+.login-description {
+    max-width: 970px;
+    margin: 15px 0 0;
+}
+
 .underline {
     text-decoration: underline;
 }
 
 .form-container {
-    width: 50%;
+    width: 70%;
 }
 
 #password {
-    margin-top: -30px;
+    margin-top: -34px;
 } 
 
 .fa-eye, .fa-eye-slash { 
@@ -226,7 +231,7 @@ nav div {
     z-index: 50; 
     float: right; 
     position: relative; 
-    margin-top: 27px; 
+    margin-top: 30px; 
     margin-right: 13px; 
     color: #949494;
 }
@@ -260,15 +265,24 @@ nav div {
 }
 
 /* ---  Forms  --- */
-input, select {
+input, select, textarea {
     width: 100%;
-    padding: 14px;
+    padding: 17px;
     margin: 7px 0;
 }
 
 input[type="submit"] {
-    background: #deea75 !important;
+    background: #eae4df !important;
     color: black !important;
+    border-radius: 0;
     width: 23%;
     float: right;
+}
+
+input[type="textarea"] {
+    height: 170px;
+}
+
+input[type="textarea"] placeholder {
+    color: red;
 }
