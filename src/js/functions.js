@@ -16,24 +16,6 @@ console.log("Connected")
 //     });
 // }
 
-/**/
-function showMenu() { 
-    console.log("Why is this not working?")
-    document.getElementById("teams-dropdown").classList.toggle("show");
-}
- 
-/**/
-window.onclick = function(event) {
-    if (!event.target.matches('.ellipse')) {
-        var dropdowns = document.getElementsByClassName("teams-dropdown");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) { openDropdown.classList.remove('show'); }
-        }
-    }
-}
-
 // function toastMessage() {
 //     var toastDiv = document.getElementById("toast");
 //     toastDiv.className = "show";

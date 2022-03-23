@@ -83,3 +83,21 @@ function submitListing($title, $price, $location, $category, $description, $file
     mysqli_stmt_close($stmt); // Close connections
     mysqli_close($conn);
 }
+
+/* Select listings posted by a specific user. This is so they can view them on their profile */
+function getMyListings($id) {
+    require 'conn.php';
+    return $conn->query("SELECT * FROM listing WHERE posted_by=" . $id);
+}
+
+/* This method is used to check if a listing has been posted by the $_SESSION user */
+function getPosterID($listing_id) {
+    require 'conn.php';
+    $get_id = $conn->query("SELECT posted_by FROM listing WHERE '" . $listing_id . "'=id");
+
+    if ($get_id->num_rows > 0) {
+        while ($row = $get_id->fetch_assoc()) {
+            return $row['posted_by'];
+        }
+    }
+}

@@ -121,7 +121,7 @@ nav div {
 
 .listings-container-inner {
     justify-content: center;
-    /* width: 70%; */
+    margin-bottom: 100px;
 }
 
 .listing { 
@@ -246,11 +246,14 @@ nav div {
     text-decoration: underline;
 }
 
-.display-form-error p {
+.display-form-error p, .delete-button {
     background-color: #ffdfe2; 
-    color: #fa4941; padding: 
-    10px; font-size: 14px; 
+    color: #fa4941; 
+    padding: 10px; 
+    font-size: 14px; 
 }
+
+.delete-button {margin-top: 20px;}
 
 .display-form-error a {
     color: #fa4941; 

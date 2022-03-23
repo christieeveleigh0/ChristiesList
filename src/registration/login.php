@@ -22,7 +22,7 @@ if (isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['password
             $_SESSION['valid'] = 1;
             $_SESSION['timeout'] = time();
             $_SESSION['email'] = $email;
-            $_SESSION['user_id'] = $user_id;
+            $_SESSION['id'] = $user_id;
             
             header('location: ../create-listing.php');
             exit();

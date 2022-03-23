@@ -22,7 +22,7 @@
                         $listings = getTopListings(); 
                         if ($listings->num_rows > 0) {
                             while($row = $listings->fetch_assoc()) {
-                                listing($row['id'], $row['name'], $row['price'], $row['location'], $row['image']);
+                                listing($row['id'], $row['name'], $row['price'], $row['location'], $row['image'], false);
                             }
                         } else {
                         echo '<div>
@@ -58,7 +58,7 @@
 
                     <td>
                     <?php
-                        listing($row['id'], $row['name'], $row['price'], $row['location'], $row['image']);
+                        listing($row['id'], $row['name'], $row['price'], $row['location'], $row['image'], false);
 
                         if ($u > 7) {
                             break;

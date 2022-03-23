@@ -1,15 +1,15 @@
 <?php
 require 'core/conn.php'; include 'core/queries.php';
 
-$target_dir = "image/listings/";
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+// $target_dir = "image/listings/";
+// $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 
 $title = $conn->real_escape_string($_POST['title']);
 $price = $conn->real_escape_string($_POST['price']);
 $location = $conn->real_escape_string($_POST['location']);
 $category = $conn->real_escape_string($_POST['category']);
 $description = $conn->real_escape_string($_POST['description']);
-$filepath = $target_file;
+$filepath = "image/placeholder.jpg";
 
 
 if (submitListing($title, $price, $location, $category, $description, $filepath)) { echo 'SUCCESS';}
