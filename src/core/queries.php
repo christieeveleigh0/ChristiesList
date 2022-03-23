@@ -117,3 +117,22 @@ function deleteListing($id, $user_id) {
     }
     return false;
 }
+
+/* Select who posted the listing using the listing idm, then select the details of the user who posted
+   it using their id that is a match with posted_by */
+function getPostersAddres($listing_id) {
+    require 'conn.php';
+    $get_listing_id = $conn->query("SELECT posted_by FROM listing WHERE id=" . $listing_id);
+    if ($get_listing_id->num_rows > 0) {
+        while ($row = $get_listing_id->fetch_assoc()) {
+            $posted_by = $row['posted_by'];
+        }
+    } else {echo $conn->error; }
+
+    $poster_details = $conn->query("SELECT name, email FROM users WHERE id=" . $posted_by);
+    if ($poster_details->num_rows > 0) {
+        while ($boo = $poster_details->fetch_assoc()) {
+            return $boo['email'];
+        }
+    } else {echo $conn->error; }
+}

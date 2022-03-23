@@ -21,11 +21,13 @@
             </div>
             <div>
                 <p>Message user</p>
-                <form>
-                    <input type="text" placeholder="Name" required>
-                    <input type="text" placeholder="Email Address" required>
-                    <input type="text" placeholder="Cellphone Number">
-                    <input type="textarea" placeholder="Message">
+                <form action="send-enquiry.php" method="post">
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="text" name="email" placeholder="Email Address" required>
+                    <input type="text" name="number" placeholder="Cellphone Number">
+                    <input type="textarea" name="message" placeholder="Message">
+                    <input type="hidden" name="listing-id" value="<?= $_GET['id'] ?>">
+                    <input type="hidden" name="send" value="send">
                     <input type="submit">
                 </form>
             </div>

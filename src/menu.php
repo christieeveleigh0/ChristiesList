@@ -17,7 +17,8 @@ echo '<header>
                 <a href="create-listing.php">Post Listing</a>';
 
                 if (isset($_SESSION['valid'])) {
-                    echo '<a href="profile.php">My profile</a>';
+                    echo '<a href="profile.php">My profile</a>
+                          <a href="registration/logout.php" class="underline">Logout</a>';
                 }
 
 echo        '</div>
