@@ -1,15 +1,18 @@
 <?php
-require 'core/conn.php';
-require 'core/queries.php';
+include 'core/conn.php';
+include 'core/queries.php';
+
+$errors = array(); 
+$success = array();
 
 $listing_id = $_POST['listing-id'];
 
 if (isset($_POST['send']) && !empty($_POST['email'])) {
+    // Get listing poster's email address
+    $posters_address = getPostersAddress($listing_id, 'email');
 
-    // Sanitize sent data and get listing poster's email address
+    // Sanitize sent data
     $sender_address = $conn->real_escape_string($_POST['email']);
-    $posters_address = getPostersAddres($listing_id);
-
     $sender_name = $conn->real_escape_string($_POST['name']);
     $sender_number = $conn->real_escape_string($_POST['number']);
     $sender_message = $conn->real_escape_string($_POST['message']);
@@ -37,8 +40,8 @@ if (isset($_POST['send']) && !empty($_POST['email'])) {
     $headers .= "From: noreply@list.c-e-marx.co.za/" . "\r\n";
 
     if (mail($posters_address, $subject, $content, $headers)) {
-        array_push($success, "A password recovery email has been sent to " . $address . ". Please check your spam.");
+        array_push($success, "Your enquiry has been sent!");
     } else {
-        array_push($errors, "The password recovery email could not be sent at this time. Please try again later.");
+        array_push($errors, "We're sorry. Your enquiry could not be sent at this time.");
     }
 }

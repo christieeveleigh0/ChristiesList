@@ -6,7 +6,7 @@ if ($_SESSION['valid'] != true) { // Redirect user to login page if they aren't 
     exit();
 }
 
-include 'core/queries.php'; 
+require 'process-listing.php';
 include 'menu.php'; 
 include 'model/full-listing.php';
 ?>
@@ -21,7 +21,9 @@ include 'model/full-listing.php';
                 <h1>Post listing <img src="../image/gem.png"></h1>
             </div> 
 
-            <form action="process-listing.php" method="post" enctype="multipart/form-data">
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post" enctype="multipart/form-data">
+                <?php include('registration/errors.php'); ?>
+                <?php include('registration/success.php'); ?>
                 <input type="text" name="title" placeholder="Ad Title" required>
                 <input type="number" name="price" placeholder="Price in Rands">
                 <input type="text" name="location" placeholder="Location">
@@ -43,6 +45,7 @@ include 'model/full-listing.php';
                     SAME MESSAGE BLOCK AS CAYOOTS ADD TEAM MEMBER
                 </div>
 
+                <input type="hidden" name="create" value="create">
                 <input type="submit" value="Post Listing">
             </form>
         </div>

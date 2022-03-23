@@ -8,17 +8,17 @@ function fullListing($id, $name, $description, $price, $date, $location, $image)
                 <div class="full-description">
                     <div class="full-description-price">
                         <div>
-                            <h4>' . $name . '</h4>
-                            <p>Posted: ' . $date . '</p>
+                            <h4>' . htmlspecialchars($name) . '</h4>
+                            <p>Posted: ' . htmlspecialchars($date) . '</p>
                         </div>
-                        <h4>R' . $price . '</h4>
+                        <h4>R' . htmlspecialchars($price) . '</h4>
                     </div>
                     
 
-                    <p>' . $description . '</p>
+                    <p>' . htmlspecialchars($description) . '</p>
                     <div class="location">
                         <img src="image/location.png" width="15px">
-                        <p>' . $location . '</p>
+                        <p>' . htmlspecialchars($location) . '</p>
                     </div>
                 </div>    
           </div>';

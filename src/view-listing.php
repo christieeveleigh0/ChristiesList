@@ -1,4 +1,4 @@
-<?php session_start(); include 'menu.php'; include 'core/queries.php'; include 'model/full-listing.php'; ?>
+<?php session_start(); require 'send-enquiry.php';  include 'menu.php'; include 'model/full-listing.php'; ?>
 
 <html>
     <!-- Display an individual listing by calling the method in queries.php that displays
@@ -20,12 +20,14 @@
                 ?>
             </div>
             <div>
-                <p>Message user</p>
-                <form action="send-enquiry.php" method="post">
+                <p>Message User</p>
+                <?php include('registration/errors.php'); ?>
+                <?php include('registration/success.php'); ?>
+                <form action="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']);?>" method="post">
                     <input type="text" name="name" placeholder="Name" required>
                     <input type="text" name="email" placeholder="Email Address" required>
                     <input type="text" name="number" placeholder="Cellphone Number">
-                    <input type="textarea" name="message" placeholder="Message">
+                    <textarea id="message" name="message" rows="8" cols="50" placeholder="Message"></textarea>
                     <input type="hidden" name="listing-id" value="<?= $_GET['id'] ?>">
                     <input type="hidden" name="send" value="send">
                     <input type="submit">

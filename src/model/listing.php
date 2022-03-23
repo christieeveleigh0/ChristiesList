@@ -7,10 +7,10 @@ function listing($id, $name, $price, $location, $image, $delete) {
             <div class="listing">
                 <img src="' . $image . '" width="290px">
                 <div class="description">
-                    <h3>' . $name . '</h3><p>R' . $price . '</p>
+                    <h3>' . htmlspecialchars($name) . '</h3><p>R' . htmlspecialchars($price) . '</p>
                     <div class="location">
                         <img src="image/location.png" width="15px">
-                        <p>' . $location . '</p>
+                        <p>' . htmlspecialchars($location) . '</p>
                     </div>';
 
                     $poster_id = getPosterID($id);
