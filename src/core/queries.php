@@ -69,10 +69,12 @@ function registerUser($name, $number, $email, $password) {
    On success, return true. */
 function submitListing($title, $price, $location, $category, $description, $filepath) {
     require 'conn.php';
-    $query = "INSERT INTO listing (name, description, location, date, category, image, price) VALUES (?, ?, ?, ?, ?, ?, ?)";
-   
+    session_start();
+
+    $query = "INSERT INTO listing (posted_by, name, description, location, date, category, image, price) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+
     if ($stmt = mysqli_prepare($conn, $query)) {
-        mysqli_stmt_bind_param($stmt, "sssssss", $title, $description, $location, date("Y/m/d"), $category, $filepath, $price);
+        mysqli_stmt_bind_param($stmt, "ssssssss", $_SESSION['id'], $title, $description, $location, date("Y/m/d"), $category, $filepath, $price);
         mysqli_stmt_execute($stmt);
         return true;
     } else {
@@ -100,4 +102,18 @@ function getPosterID($listing_id) {
             return $row['posted_by'];
         }
     }
+}
+
+/* Check is performed so only the user who created the listing can delete the listing. Otherwise
+   users may try to delete other user's listings by copying the url */
+function deleteListing($id, $user_id) {
+    require 'conn.php';
+    session_start();
+
+    if ($_SESSION['id'] == $user_id) {
+        if ($conn->query("DELETE FROM listing WHERE id=" . $id)) {
+            return true;
+        }
+    }
+    return false;
 }

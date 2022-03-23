@@ -25,7 +25,7 @@
 
                     <td>
                     <?php
-                        listing($row['id'], $row['name'], $row['price'], $row['location'], $row['image']);
+                        listing($row['id'], $row['name'], $row['price'], $row['location'], $row['image'], false);
                         if ($i > 3) {
                             echo "</tr><tr>";
                             $i = 0;

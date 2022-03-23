@@ -13,15 +13,13 @@ function listing($id, $name, $price, $location, $image, $delete) {
                         <p>' . $location . '</p>
                     </div>';
 
-                    if ($_SESSION['id'] == getPosterID($id) && $delete == true) {
-                        echo '<a class="delete-button">Delete Listing</a>';
+                    $poster_id = getPosterID($id);
+                    if ($_SESSION['id'] == $poster_id && $delete == true) {
+                        echo '<a href="delete-listing.php?id=' . $id .'&user=' . $poster_id . '" class="delete-button">Delete Listing</a>';
                     }
-                
-
- 
-
-
-            echo '</div></div></a>';
+    echo '      </div>
+            </div>
+         </a>';
 
 
 }

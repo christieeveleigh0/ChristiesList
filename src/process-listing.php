@@ -1,4 +1,5 @@
 <?php
+session_start();
 require 'core/conn.php'; include 'core/queries.php';
 
 // $target_dir = "image/listings/";
@@ -9,10 +10,9 @@ $price = $conn->real_escape_string($_POST['price']);
 $location = $conn->real_escape_string($_POST['location']);
 $category = $conn->real_escape_string($_POST['category']);
 $description = $conn->real_escape_string($_POST['description']);
-$filepath = "image/placeholder.jpg";
+$filepath = "image/placeholder.png";
 
-
-if (submitListing($title, $price, $location, $category, $description, $filepath)) { echo 'SUCCESS';}
+if (submitListing($title, $price, $location, $category, $description, $filepath)) { header("Location: profile.php"); }
 else {echo $conn->error; }
 
 
