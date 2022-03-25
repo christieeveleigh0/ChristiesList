@@ -44,7 +44,7 @@ require 'process-login.php'; // Form is automatically sent to this file for erro
 
             <div class="registration">
                 <p>Don't have an account? <a href="register.php">Sign up</a></p>
-                <p><a href="forgot_password.php">Reset your password</a></p>
+                <p><a href="forgot-password.php">Reset your password</a></p>
             </div>
 
         </div>

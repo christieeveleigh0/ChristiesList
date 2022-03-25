@@ -15,7 +15,7 @@ include 'model/listing.php';
         <div class="container">
             <div class="heading">
                 <div>
-                    <h1>Hello, <?= $_SESSION['email']?> <img src="image/collectible.png" width="30px"></h1>
+                    <h1>Hello, <?= $_SESSION['email']?> <img src="image/hibiscus.jpg" width="25px"></h1>
                 </div>
                 <div class="heading-description">
                     <p>This is your profile, where you can view all of your listings, and delete listings you no longer want. You can also use this link to 

@@ -149,3 +149,56 @@ function getPostersAddress($listing_id) {
         }
     } else {echo $conn->error; }
 }
+
+/* Check the user exists in the database -- DUPLICATE */
+function checkEmail($email) {
+    require 'conn.php';
+    $get_email = $conn->query("SELECT email FROM users WHERE email='" . $email . "'");
+    if ($get_email->num_rows > 0) {return true;}
+    return false;
+}
+
+/**/
+function getUserDetails($email) {
+    require 'conn.php';
+    return $conn->query("SELECT id, name FROM users WHERE email='" . $email . "'");
+}
+
+
+/* */ 
+function resetKey($id, $reset_key) {
+    require 'conn.php';
+    $query = "INSERT INTO resets (`user`, `resetkey`) VALUES (?, ?)";
+
+    if ($stmt = mysqli_prepare($conn, $query)) {
+        mysqli_stmt_bind_param($stmt, "ss", $id, $reset_key);
+        mysqli_stmt_execute($stmt);
+        return true;
+    } else {
+        // echo mysqli_error($link);
+        echo $conn->error;
+        return false;
+    }
+
+    mysqli_stmt_close($stmt); // Close connections
+    mysqli_close($conn);
+}
+
+/* Select the user whose reset key is sent in the mail */
+function getUID($reset_key) {
+    require 'conn.php';
+    $get_user = $conn->query("SELECT user FROM resets WHERE resetkey='" . $reset_key . "'");
+    if ($get_user->num_rows > 0) {
+        echo 'hereer';
+        while ($row = $get_user->fetch_assoc()) {
+            return $row['user'];
+        }
+    } else {
+        echo $conn->error;
+    }
+}
+
+function resetPassword($hash ,$user_id) {
+    require 'conn.php';
+    return $conn->query("UPDATE users SET password='$hash' WHERE id=" . $user_id);
+}
