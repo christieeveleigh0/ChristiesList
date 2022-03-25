@@ -33,3 +33,5 @@ Some features are unavaible when run in the Docker container due to lack of perm
 I would like to add expirations on the password reset keys so users can only use them once. I also want to implement image resizing, so all images are the same size when a user uploads them.
 
 ## Screenshots 
+![List](https://user-images.githubusercontent.com/39589003/160100262-de5eaec2-da9a-4f72-8d85-ceb06d73fb7a.png)
+
