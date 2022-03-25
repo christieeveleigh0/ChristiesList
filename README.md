@@ -1,16 +1,17 @@
 # ChristiesList
 This is a fun second-hand marketpace where a user can list items for purchase, or view and enquire about items. Please view the live site here to demo all features: **http://list.c-e-marx.co.za/**.
 
-## Use
+## Setup
 Please use the following commands step by step to get the Dockerised verson of Christie's List to work.
 
 **Pull the SQl and PHP Docker images:**
 - docker pull mysql/mysql-server:latest
 - docker pull php
 
-**Run servers:**
-- PHP: docker run -it --rm --name live-christieslist christieslist
-- Apache: docker run -d -p 80:80 --name apache-christieslist -v "$PWD":/var/www/html php:7.2-apache
+**Run & Build Images**
+- docker build -t christieslist
+- docker run -it --rm --name live-christieslist christieslist
+- Run Apache server on port 80: docker run -d -p 80:80 --name apache-christieslist -v "$PWD":/var/www/html php:7.2-apache
 
 **Run:**
 - In the ChristiesList directory, run docker-compose up -d
@@ -21,6 +22,7 @@ Please use the following commands step by step to get the Dockerised verson of C
 - Import listings.sql, located in repo
 
 **Good to go:**
+Once this has been done, these steps don't need to be repeated. You should be able to run the program using the following command:
 - docker-compose up -d
 - When you are finished, use docker-compose down to stop the program
 
