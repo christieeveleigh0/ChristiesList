@@ -5,7 +5,7 @@
         <div class="container">
             <div class="heading">
                 <div>
-                    <h1>About Christie's List <?= $_GET['type'] ?> <img src="image/collectible.png" width="30px"></h1>
+                    <h1>About Christie's List <?= $_GET['type'] ?> <img src="image/smile.jpg" width="30px"></h1>
                 </div>
                 <div class="heading-description">
                     <p>Christie's List was created by <a href="https://c-e-marx.co.za/" class="underline">developer Christie Marx</a> as a college project for her studies

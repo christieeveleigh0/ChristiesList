@@ -22,7 +22,7 @@ p {
     font-size: 14px;
 }
 
-p, .registration p {
+p, .registration p, select {
     line-height: 1.8em; 
     font-weight: 300; 
     color: #727272;
@@ -33,6 +33,8 @@ h1, h2, h3, h4 {font-weight: 500; color: #0d0c22;}
 h1 {font-size: 40px;}
 h2 {text-transform: uppercase; font-size: 13px; margin: 2px;}
 h4 {font-size: 25px;}
+
+.title {margin-bottom: 15px;}
 
 button, input[type="submit"] {
     border-radius: 17px;
@@ -151,7 +153,7 @@ nav div {
 
 .safety-banner {
     width: -webkit-fill-available;
-    margin: 70px 0;
+    margin: 0 0 70px 0;
     padding: 70px;
     justify-content: space-between;
     background: #eae4df url("../image/safety.png") no-repeat center;
@@ -278,7 +280,7 @@ input[type="submit"] {
     background: #eae4df !important;
     color: black !important;
     border-radius: 0;
-    width: 23%;
+    width: 165px;
     float: right;
 }
 
@@ -288,4 +290,13 @@ input[type="textarea"] {
 
 input[type="textarea"] placeholder {
     color: red;
+}
+
+/* Smaller screens */
+@media screen and (max-width: 1540px) {
+
+}
+
+.upload-text {
+    font-size: 14px !important;
 }

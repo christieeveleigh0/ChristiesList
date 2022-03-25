@@ -12,10 +12,11 @@ include 'model/full-listing.php';
 ?>
 
 <html>
+<body>  
     <!-- Post a listing via the form. This information is sent to the database and inserted via the 
          addListing() query.
     --->
-    <div class="container">
+    <div class="container listings-container-inner">
         <div class="inner">
             <div class="login-heading">
                 <h1>Post listing <img src="../image/gem.png"></h1>
@@ -38,16 +39,13 @@ include 'model/full-listing.php';
                 </select>
                 <textarea id="message" name="description" rows="8" cols="50" placeholder="Description"></textarea>
 
-                <p>Upload a nice picture</p>
+                <p class="upload-text">Upload a nice picture</p>
                 <input type="file" name="fileToUpload" id="fileToUpload">
-
-                <div>
-                    SAME MESSAGE BLOCK AS CAYOOTS ADD TEAM MEMBER
-                </div>
-
                 <input type="hidden" name="create" value="create">
                 <input type="submit" value="Post Listing">
             </form>
         </div>
     </div>
+    <?php include 'footer.php'; ?>
+</body>
 </html>

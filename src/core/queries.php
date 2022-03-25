@@ -109,9 +109,18 @@ function getPosterID($listing_id) {
 function deleteListing($id, $user_id) {
     require 'conn.php';
     session_start();
-
+    
     if ($_SESSION['id'] == $user_id) {
         if ($conn->query("DELETE FROM listing WHERE id=" . $id)) {
+            
+            $get_picture = $conn->query("SELECT image FROM listing WHERE id=" . $id);
+            if ($get_picture->num_rows > 0) {
+                while ($row = $get_picture->fetch_assoc()) {
+                    $image = $row['image'];
+                    unlink('../' . $image);
+                }
+            }
+
             return true;
         }
     }

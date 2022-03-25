@@ -20,7 +20,7 @@ if (isset($_POST['create'])) {
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
     
-    // Check if image file is a actual image or fake image
+    // Check for fake images
     if(isset($_POST["submit"])) {
       $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
       if($check !== false) {
@@ -31,10 +31,17 @@ if (isset($_POST['create'])) {
       }
     }
     
-    // Check if already exists
+    // Check if file already exists. If it does, rename it with random string and
+    //  reference this when adding to the database
     if (file_exists($target_file)) {
-        array_push($errors, "Sorry, file already exists. Please rename it and try again.");
-        $uploadOk = 0;
+        $random_string = rand();
+        $result = md5($random_string );
+
+        $filename = basename($_FILES["fileToUpload"]["name"]);
+        $extension = end(explode(".", $filename));
+        $new_name = $result.".".$extension;
+
+        $target_file = $target_dir . $new_name;
     }
     
     // Check file size

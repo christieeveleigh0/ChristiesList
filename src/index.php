@@ -42,7 +42,7 @@
 
             <!-- Display items in a nice, neat table with 4 rows. Iterating over sql results as they are being displayed as 
                  a Listing model. Display 8 listings only and move them over the the next row after 4 have been displayed -->
-            <h1>Hot Items <img src="image/hot.png" width="25px"></h1>
+            <h1 class="title">Hot Items <img src="image/hot.png" width="25px"></h1>
             <div class="hot-items">
                 <table>
                     <?php 
@@ -52,8 +52,7 @@
                         $hot_listings = getHotListings();
                             while ($row = $hot_listings->fetch_assoc()) { // Start While
                                 $i++;
-                                $u++;
-                                
+                                $u++;      
                     ?>
 
                     <td>
@@ -74,7 +73,7 @@
 
                 </table>
             </div>
-            <h1>Categories <img src="image/categories.png" width="30px"></h1>
+            <h1 class="title">Categories <img src="image/categories.png" width="30px"></h1>
             <div class="category">
                 <div class="categories">
                     <a href="category.php?type=antiques"><div class="category-1"><h3>Antiques</h3></div></a>

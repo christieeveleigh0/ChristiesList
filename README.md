@@ -1,1 +1,0 @@
-Please note, uploading images and sending forms are not possible with this in-producition version due to Docker limitations. If you would like to demo those features, kindly view the live site here: list.c-e-marx.co.za.
