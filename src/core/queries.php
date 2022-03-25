@@ -105,22 +105,25 @@ function getPosterID($listing_id) {
 }
 
 /* Check is performed so only the user who created the listing can delete the listing. Otherwise
-   users may try to delete other user's listings by copying the url */
+   users may try to delete other user's listings by copying the url. We also delete the image off the server */
 function deleteListing($id, $user_id) {
     require 'conn.php';
     session_start();
-    
-    if ($_SESSION['id'] == $user_id) {
-        if ($conn->query("DELETE FROM listing WHERE id=" . $id)) {
-            
-            $get_picture = $conn->query("SELECT image FROM listing WHERE id=" . $id);
-            if ($get_picture->num_rows > 0) {
-                while ($row = $get_picture->fetch_assoc()) {
-                    $image = $row['image'];
-                    unlink('../' . $image);
-                }
-            }
 
+    if ($_SESSION['id'] == $user_id) {
+
+        // Delete image off server
+        $get_picture = $conn->query("SELECT image FROM listing WHERE id=" . $_GET['id']);
+        if ($get_picture->num_rows > 0) {
+            echo 'hereer';
+            while ($row = $get_picture->fetch_assoc()) {
+                $image = $row['image'];
+            }
+            unlink($image);
+        }
+
+        // Perform query
+        if ($conn->query("DELETE FROM listing WHERE id=" . $id)) {
             return true;
         }
     }
